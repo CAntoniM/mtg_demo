@@ -21,6 +21,13 @@ Atherdrift::Atherdrift()
     _cards = { new DriftCard("foo") };
 }
 
+Atherdrift::~Atherdrift()
+{
+    for (Card* card : _cards) {
+        delete card;
+    }
+}
+
 std::string Atherdrift::name()
 {
     return "atherdrift";

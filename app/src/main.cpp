@@ -41,7 +41,7 @@ public:
     {
 
         if (_set != nullptr) {
-            free(_set);
+            delete _set;
             _set = nullptr;
         }
 
@@ -133,6 +133,13 @@ public:
 
         for (string lib : dynamic_libs) {
             _sets.push_back(new SetLibrary(lib));
+        }
+    }
+
+    ~SetManager()
+    {
+        for (SetLibrary* set : _sets) {
+            delete set;
         }
     }
 

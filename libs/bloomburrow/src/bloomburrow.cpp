@@ -21,11 +21,20 @@ BloomBurrow::BloomBurrow()
     _cards = { new BloomBurrowCard("test") };
 }
 
-std::string BloomBurrow::name() {
+BloomBurrow::~BloomBurrow()
+{
+    for (Card* card : _cards) {
+        delete card;
+    }
+}
+
+std::string BloomBurrow::name()
+{
     return "BloomBurrow";
 }
 
-std::vector<Card*> BloomBurrow::getCards() {
+std::vector<Card*> BloomBurrow::getCards()
+{
     return _cards;
 }
 

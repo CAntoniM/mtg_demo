@@ -7,7 +7,7 @@ class Atherdrift : public Set {
 
 public:
     Atherdrift();
-
+    ~Atherdrift();
     virtual std::string name();
     virtual std::vector<Card*> getCards();
 
